@@ -53,7 +53,7 @@ void set_colors() {
     }
 
     // set shades of green
-    for (int ii = 0; ii < 5; ii++) {
+    for (int ii = 0; ii < 6; ii++) {
         init_color(ii, 0, ii*200, 0); // something, R, G, B
     }
 
