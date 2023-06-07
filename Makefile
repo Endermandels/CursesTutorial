@@ -1,10 +1,10 @@
 EXEC = nc
 OBJS = main.o matrix.o ui.o
-CCFLAGS = gcc -Wall -std=gnu11 --pedantic
+CCFLAGS = gcc -Wall
 CACHE = .cache
 
 ${EXEC}: ${OBJS}
-	${CCFLAGS} -o ${EXEC} ${OBJS}
+	${CCFLAGS} -o ${EXEC} ${OBJS} -lncurses
 	make cache
 
 # if the cache does not exist, create it
@@ -18,13 +18,13 @@ ${CACHE}:
 	mkdir -p $@
 
 main.o: main.c
-	${CCFLAGS} -c main.c
+	${CCFLAGS} -c main.c -o main.o
 
 matrix.o: matrix.c
-	${CCFLAGS} -c matrix.c
+	${CCFLAGS} -c matrix.c -o matrix.o
 
 ui.o: ui.c
-	${CCFLAGS} -c ui.c
+	${CCFLAGS} -c ui.c -o ui.o
 
 run: ${EXEC}
 	./${CACHE}/${EXEC}

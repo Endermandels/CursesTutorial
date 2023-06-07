@@ -48,5 +48,15 @@ void show_matrix() {
 }
 
 void set_colors() {
+    for (int ii = 0; ii < 8; ii++) {
+        init_pair(ii+1, ii, COLOR_BLACK);
+    }
+
+    // set shades of green
+    for (int ii = 0; ii < 5; ii++) {
+        init_color(ii, 0, ii*200, 0); // something, R, G, B
+    }
+
+    init_color(6, 800, 1000, 800);
 
 }
